@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+model:
+  path:  "/Users/guxi/course/DDGradle2022/app/build/libs/pytorch_models/resnet18.pt"
+  testPic: "/Users/guxi/course/DDGradle2022/app/build/libs/pytorch_models/testPic.jpg"

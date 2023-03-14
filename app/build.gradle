@@ -1,0 +1,33 @@
+plugins {
+	id 'java'	
+	id 'org.springframework.boot' version '3.0.4'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'edu.wust'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '19'
+
+repositories {
+	  mavenLocal()
+		maven { url 'https://maven.aliyun.com/repository/spring/'}
+		maven { url 'https://maven.aliyun.com/repository/public/' }
+		maven { url 'https://maven.aliyun.com/repository/jcenter/'}  
+		mavenCentral()	
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-starter-actuator'//use in debug
+	developmentOnly 'org.springframework.boot:spring-boot-devtools' 
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	implementation 'ai.djl.pytorch:pytorch-engine:0.20.0'//AI
+	implementation 'ai.djl.pytorch:pytorch-model-zoo:0.20.0'//AI
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+
